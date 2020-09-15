@@ -8,27 +8,29 @@ namespace AppTp1.entities
 {
     class Rectangle : Forme
     {
-        public int Largeur { get => Largeur; set => Largeur = value; }
-        public int Longueur { get => Longueur; set => Longueur = value; }
+        int largeur;
+        int longueur;
+        public int Largeur { get => largeur; set => largeur = value; }
+        public int Longueur { get => longueur; set => longueur = value; }
 
         int aire;
         int perimetre;
 
         public void Aire()
         {
-            this.aire = Longueur * Largeur;
+            this.aire = longueur * largeur;
         }
 
         public void Perimetre()
         {
-            this.perimetre = (2 * Longueur) + (2 * Largeur);
+            this.perimetre = (2 * longueur) + (2 * largeur);
         }
 
         public override string ToString()
         {
             Aire();
             Perimetre();
-            return String.Format("Rectangle de largeur={0} et de longueur={1}\n Aire: {2}\n Perimetre: {3}",this.Largeur, this.Longueur, this.aire, this.perimetre);
+            return String.Format("Rectangle de largeur={0} et de longueur={1}\n Aire: {2}\n Perimetre: {3}",this.largeur, this.longueur, this.aire, this.perimetre);
         }
     }
 }
