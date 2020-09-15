@@ -17,22 +17,26 @@ namespace AppTp1.entities
 
         double aire;
         double perimetre;
+        double p;
+        double interC;
 
         public void Aire()
         {
-            
+            this.p = (this.a + this.b + this.c) / 2d;
+            this.interC = p *(p - this.a) * (p - this.b) * (p - this.c);
+            this.aire = Math.Sqrt(interC);
         }
 
         public void Perimetre()
         {
-            
+            this.perimetre = a + b + c;
         }
 
         public override string ToString()
         {
             Aire();
             Perimetre();
-            return String.Format("Triangle de coté A={0} B={1} C={2}\n Aire: {3}\n Perimetre: {4}", this.a, this.b, this.c, this.aire, this.perimetre) ;
+            return String.Format("Triangle de coté A={0} B={1} C={2}\n Aire: {3}\n Perimetre: {4}\n", this.a, this.b, this.c, this.aire, this.perimetre) ;
         }
     }
 }

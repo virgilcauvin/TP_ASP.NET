@@ -27,7 +27,7 @@ namespace AppTp1.entities
         {
             Aire();
             Perimetre();
-            return String.Format("Carré de coté={0}\n Aire: {1}\n Perimetre: {2}", this.longueur, this.aire, this.perimetre);
+            return String.Format("Carré de coté= {0}\n Aire: {1}\n Perimetre: {2}\n", this.longueur, this.aire, this.perimetre);
         }
     }
 }

@@ -30,7 +30,7 @@ namespace AppTp1.entities
         {
             Aire();
             Perimetre();
-            return String.Format("Rectangle de largeur={0} et de longueur={1}\n Aire: {2}\n Perimetre: {3}",this.largeur, this.longueur, this.aire, this.perimetre);
+            return String.Format("Rectangle de largeur= {0} et de longueur= {1}\n Aire: {2}\n Perimetre: {3}\n",this.largeur, this.longueur, this.aire, this.perimetre);
         }
     }
 }
