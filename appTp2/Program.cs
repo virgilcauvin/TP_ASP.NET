@@ -54,8 +54,7 @@ namespace appTp2
                     bab = item.Count();
                 }
             }
-            Console.WriteLine(bob + " " + bab);
-
+            Console.WriteLine(bob + " a le plus grand nombre de livres avec: " + bab + " livres");
 
             Console.WriteLine("/////////////////////////////////\n");
 
@@ -68,8 +67,8 @@ namespace appTp2
                 {
                     pages += item2.NbPages;
                 }
-                 livres = pages / item.Count();
-                Console.WriteLine("Nombre de pages moyens des livres par auteurs"+ " " + livres);
+                livres = pages / item.Count();
+                Console.WriteLine("Nombre de pages moyens des livres pour "+ item.Key.Nom + " " + item.Key.Prenom + " est de: " + livres);
             }
 
            
