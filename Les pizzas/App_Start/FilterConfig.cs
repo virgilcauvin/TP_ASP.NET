@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Les_pizzas
+namespace BO
 {
     public class FilterConfig
     {

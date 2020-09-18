@@ -1,13 +1,13 @@
 ﻿using BO;
-using Les_pizzas.Database;
-using Les_pizzas.Models;
+using BO.Database;
+using BO.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Les_pizzas.Controllers
+namespace BO.Controllers
 {
     public class PizzaController : Controller
     {
@@ -21,7 +21,9 @@ namespace Les_pizzas.Controllers
         // GET: Pizza/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            PizzaCreateViewModel vm = new PizzaCreateViewModel();
+            vm.Pizza = FakeDb.Instance.pizzas.FirstOrDefault(x => x.Id == id);
+            return View(vm);
         }
 
         // GET: Pizza/Create
@@ -49,23 +51,35 @@ namespace Les_pizzas.Controllers
             }
             catch
             {
-                return View();
+                return View(vm);
             }
         }
 
         // GET: Pizza/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            PizzaCreateViewModel vm = new PizzaCreateViewModel();
+            var pizza = FakeDb.Instance.pizzas.FirstOrDefault(x => x.Id == id); ;
+            vm.Pizza = pizza;
+            vm.IdPate = pizza.Pate.Id;
+            vm.IdsIngredients = pizza.Ingredients.Select(x => x.Id).ToList();
+            vm.Ingredients = FakeDb.Instance.IngredientsDisponibles;
+            vm.Pate = FakeDb.Instance.PatesDisponibles;
+                                   
+            return View(vm);
         }
 
         // POST: Pizza/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(PizzaCreateViewModel vm)
         {
             try
             {
-                // TODO: Add update logic here
+                Pizza pizza = FakeDb.Instance.pizzas.FirstOrDefault(x => x.Id == vm.Pizza.Id);
+                pizza.Nom = vm.Pizza.Nom;
+                pizza.Pate = FakeDb.Instance.PatesDisponibles.FirstOrDefault(x => x.Id == vm.IdPate);
+                pizza.Ingredients = FakeDb.Instance.IngredientsDisponibles.Where(x => vm.IdsIngredients.Contains(x.Id)).ToList();
+
 
                 return RedirectToAction("Index");
             }
@@ -78,7 +92,9 @@ namespace Les_pizzas.Controllers
         // GET: Pizza/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            PizzaCreateViewModel vm = new PizzaCreateViewModel();
+            vm.Pizza = FakeDb.Instance.pizzas.FirstOrDefault(x => x.Id == id);
+            return View(vm);
         }
 
         // POST: Pizza/Delete/5
@@ -87,7 +103,8 @@ namespace Les_pizzas.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                Pizza pizza = FakeDb.Instance.pizzas.FirstOrDefault(x => x.Id == id);
+                FakeDb.Instance.pizzas.Remove(pizza);
 
                 return RedirectToAction("Index");
             }

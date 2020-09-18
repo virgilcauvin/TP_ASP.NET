@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Les_pizzas
+namespace BO
 {
     public class BundleConfig
     {

@@ -1,10 +1,11 @@
 ﻿using BO;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Les_pizzas.Models
+namespace BO.Models
 {
     public class PizzaCreateViewModel
     {
