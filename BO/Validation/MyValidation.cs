@@ -11,8 +11,8 @@ namespace BO.Validation
     {
         public override bool IsValid(object value)
         {
-            bool result = false;
-            if (true)
+            Boolean result = false;
+            if (value != null && (value as List<int>).Count >= 1 && (value as List<int>).Count <= 5)
             {
                 result = true;
             }

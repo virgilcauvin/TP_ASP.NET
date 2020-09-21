@@ -1,6 +1,6 @@
 ﻿using BO;
 using BO.Database;
-using BO.Models;
+using Les_Pizzas.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

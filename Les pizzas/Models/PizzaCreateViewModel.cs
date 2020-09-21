@@ -1,11 +1,12 @@
 ﻿using BO;
+using BO.Validation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace BO.Models
+namespace Les_Pizzas.Models
 {
     public class PizzaCreateViewModel
     {
@@ -14,6 +15,7 @@ namespace BO.Models
         public List<Pate> Pate { get; set; }
 
         public int IdPate { get; set; }
+        [MyValidation]
         public List<int> IdsIngredients { get; set; }
     }
 }
