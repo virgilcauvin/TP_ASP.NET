@@ -190,9 +190,9 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BO\BO.csproj">
+    <ProjectReference Include="..\BO\BOpizza.csproj">
       <Project>{6066eaaa-6025-49bc-a1f3-fc6447c42cd9}</Project>
-      <Name>BO</Name>
+      <Name>BOpizza</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

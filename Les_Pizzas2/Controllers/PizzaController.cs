@@ -41,13 +41,18 @@ namespace BO.Controllers
         {
             try
             {
-                vm.Pizza.Pate = FakeDb.Instance.PatesDisponibles.FirstOrDefault(x => x.Id == vm.IdPate);
-                foreach (var item in vm.IdsIngredients)
+                if (ModelState.IsValid)
                 {
-                    vm.Pizza.Ingredients.Add(FakeDb.Instance.IngredientsDisponibles.FirstOrDefault(x => x.Id == item ));
+                    vm.Pizza.Pate = FakeDb.Instance.PatesDisponibles.FirstOrDefault(x => x.Id == vm.IdPate);
+                    foreach (var item in vm.IdsIngredients)
+                    {
+                        vm.Pizza.Ingredients.Add(FakeDb.Instance.IngredientsDisponibles.FirstOrDefault(x => x.Id == item));
+                    }
+                    FakeDb.Instance.pizzas.Add(vm.Pizza);
+                    return RedirectToAction("Index");
                 }
-                FakeDb.Instance.pizzas.Add(vm.Pizza);
                 return RedirectToAction("Index");
+
             }
             catch
             {
