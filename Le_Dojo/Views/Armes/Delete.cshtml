@@ -28,13 +28,29 @@
         </dd>
 
     </dl>
+    <div class="col-md-10">
+        @if (ViewBag.samouraiNom != null)
+        {
+        <span>Cette arme appartient à @ViewBag.SamouraiNom, vous ne pouvez la supprimer sans la dissocier dans l'edit du samourai.</span>
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" disabled class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+        else
+        {
+            using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        }
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
+    </div>
+
+    
 </div>

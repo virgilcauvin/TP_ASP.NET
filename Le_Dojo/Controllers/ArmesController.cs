@@ -93,6 +93,11 @@ namespace Le_Dojo.Controllers
         // GET: Armes/Delete/5
         public ActionResult Delete(int? id)
         {
+            var samourai = db.Samourais.FirstOrDefault(x => x.Arme.Id == id);
+            if (samourai != null)
+            {
+                ViewBag.SamouraiNom = samourai.Nom;
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

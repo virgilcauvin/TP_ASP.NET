@@ -1,20 +1,22 @@
-﻿namespace BO
+﻿using System.Collections.Generic;
+
+namespace BO
 {
-    public class Samourai
+    public class Samourai : IdAbstract
     {
-        public int Id { get; set; }
         public int Force { get; set; }
         public string Nom { get; set; }
         public virtual Arme Arme { get; set; }
+        public virtual List<ArtMartial> ArtMartials { get; set; } = new List<ArtMartial>();
         public int Somme
         {
             get
             {
                 if (Arme != null)
                 {
-                    return Force + Arme.Degats;
+                    return (Force + Arme.Degats) * (ArtMartials.Count);
                 }
-                return Force;
+                return (Force * ArtMartials.Count);
             }
  
         }

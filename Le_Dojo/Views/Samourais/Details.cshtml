@@ -32,6 +32,23 @@
         <dd>
             @Html.DisplayFor(model => model.Arme.Nom)
         </dd>
+        <dt>
+            Art Martial
+        </dt>
+
+        <dd>
+            @foreach (var artMartial in Model.ArtMartials)
+            {
+                @Html.DisplayFor(modelItem => artMartial.Nom)<br>
+            }
+        </dd>
+        <dt>
+            Potentiel
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Somme)
+        </dd>
 
     </dl>
 </div>

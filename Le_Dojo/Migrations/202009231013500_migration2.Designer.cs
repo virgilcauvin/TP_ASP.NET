@@ -7,13 +7,13 @@ namespace Le_Dojo.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class migration1 : IMigrationMetadata
+    public sealed partial class migration2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(migration1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(migration2));
         
         string IMigrationMetadata.Id
         {
-            get { return "202009211421291_migration1"; }
+            get { return "202009231013500_migration2"; }
         }
         
         string IMigrationMetadata.Source

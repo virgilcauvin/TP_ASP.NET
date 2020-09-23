@@ -10,6 +10,8 @@ namespace Le_Dojo.Models
     {
         public Samourai Samourai { get; set; }
         public List<Arme> Armes { get; set; }
+        public List<ArtMartial> ArtMartials { get; set; }
         public int? IdArmes { get; set; }
+        public List<int> IdsArtMartials { get; set; }
     }
 }

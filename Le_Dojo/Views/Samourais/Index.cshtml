@@ -24,7 +24,11 @@
             Force de l'arme
         </th>
         <th>
-            Somme des degats
+            Potentiel
+            (force + arme * nb martial)
+        </th>
+        <th>
+            Art Martial
         </th>
         <th></th>
     </tr>
@@ -56,9 +60,22 @@
         {
             <span>0</span>
         }
-        </td>
+    </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Somme )
+        @Html.DisplayFor(modelItem => item.Somme)
+    </td>
+    <td>
+        @if (item.ArtMartials != null)
+        {
+            foreach (var artMartial in item.ArtMartials)
+            {
+                @Html.DisplayFor(modelItem => artMartial.Nom)<br>
+            }
+        }
+        else
+        {
+            <span>Pas d'art martial</span>
+        }
     </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
