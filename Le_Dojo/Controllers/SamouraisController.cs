@@ -41,7 +41,9 @@ namespace Le_Dojo.Controllers
         public ActionResult Create()
         {
             SamouraiViewModel vm = new SamouraiViewModel();
-            vm.Armes = db.Armes.ToList();
+            //vm.Armes = db.Armes.ToList();
+            List<int> armeIds = db.Samourais.Where(x => x.Arme != null).Select(x => x.Arme.Id).ToList();
+            vm.Armes = db.Armes.Where(x => !armeIds.Contains(x.Id)).ToList();
             vm.ArtMartials = db.ArtMartials.ToList();
             return View(vm);
         }
@@ -82,7 +84,8 @@ namespace Le_Dojo.Controllers
             {
                 vm.IdArmes = samourai.Arme.Id;
             }
-            vm.Armes = db.Armes.ToList();
+            List<int> armeIds = db.Samourais.Where(x => x.Arme != null).Select(x => x.Arme.Id).ToList();
+            vm.Armes = db.Armes.Where(x => !armeIds.Contains(x.Id)).ToList();
             if (samourai.ArtMartials != null)
             {
                 vm.IdsArtMartials = samourai.ArtMartials.Select(x => x.Id).ToList();
