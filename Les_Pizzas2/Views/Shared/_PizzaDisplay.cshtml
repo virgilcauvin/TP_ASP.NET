@@ -41,7 +41,7 @@
         {
             @Html.ListBoxFor(model => model.IdsIngredients, Model.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }), new { htmlAttributes = new { @class = "form-control" } })
 
-     @Html.ValidationMessageFor(model => model.Pizza.Ingredients, "", new { @class = "text-danger" })
+     @Html.ValidationMessageFor(model => model.IdsIngredients, "", new { @class = "text-danger" })
             }
             else
             {

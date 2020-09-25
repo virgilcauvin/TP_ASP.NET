@@ -1,5 +1,6 @@
 ﻿using BO;
 using BO.Validation;
+using Les_Pizzas2.Validation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -13,9 +14,10 @@ namespace Les_Pizzas2.Models
         public Pizza Pizza { get; set; }
         public List<Ingredient> Ingredients { get; set; }
         public List<Pate> Pate { get; set; }
-
+        [Required]
         public int IdPate { get; set; }
-        [MyValidation]
+        [PizzaLengh]
+        [IngrediantDoublons]
         public List<int> IdsIngredients { get; set; }
     }
 }

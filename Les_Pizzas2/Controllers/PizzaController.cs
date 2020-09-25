@@ -51,11 +51,15 @@ namespace BO.Controllers
                     FakeDb.Instance.pizzas.Add(vm.Pizza);
                     return RedirectToAction("Index");
                 }
-                return RedirectToAction("Index");
+                vm.Ingredients = FakeDb.Instance.IngredientsDisponibles;
+                vm.Pate = FakeDb.Instance.PatesDisponibles;
+                return View(vm);
 
             }
             catch
             {
+                vm.Ingredients = FakeDb.Instance.IngredientsDisponibles;
+                vm.Pate = FakeDb.Instance.PatesDisponibles;
                 return View(vm);
             }
         }
@@ -80,17 +84,24 @@ namespace BO.Controllers
         {
             try
             {
-                Pizza pizza = FakeDb.Instance.pizzas.FirstOrDefault(x => x.Id == vm.Pizza.Id);
-                pizza.Nom = vm.Pizza.Nom;
-                pizza.Pate = FakeDb.Instance.PatesDisponibles.FirstOrDefault(x => x.Id == vm.IdPate);
-                pizza.Ingredients = FakeDb.Instance.IngredientsDisponibles.Where(x => vm.IdsIngredients.Contains(x.Id)).ToList();
+                if (ModelState.IsValid)
+                {
+                    Pizza pizza = FakeDb.Instance.pizzas.FirstOrDefault(x => x.Id == vm.Pizza.Id);
+                    pizza.Nom = vm.Pizza.Nom;
+                    pizza.Pate = FakeDb.Instance.PatesDisponibles.FirstOrDefault(x => x.Id == vm.IdPate);
+                    pizza.Ingredients = FakeDb.Instance.IngredientsDisponibles.Where(x => vm.IdsIngredients.Contains(x.Id)).ToList();
 
-
-                return RedirectToAction("Index");
+                    return RedirectToAction("Index");
+                }
+                vm.Ingredients = FakeDb.Instance.IngredientsDisponibles;
+                vm.Pate = FakeDb.Instance.PatesDisponibles;
+                return View(vm);
             }
             catch
             {
-                return View();
+                vm.Ingredients = FakeDb.Instance.IngredientsDisponibles;
+                vm.Pate = FakeDb.Instance.PatesDisponibles;
+                return View(vm);
             }
         }
 

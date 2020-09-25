@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BO.Validation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,8 +14,8 @@ namespace BO
         [Required]
         [MinLength(5)]
         [MaxLength(20)]
+        [PizzaNom]
         public string Nom { get; set; }
-        [Required]
         public Pate Pate { get; set; }
         public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
 

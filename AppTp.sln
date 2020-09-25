@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "appTp2", "appTp2\appTp2.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppAspNetTP", "AppAspNet\AppAspNetTP.csproj", "{42F59421-7528-4BBD-A5D6-CC3E6EA21C3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOpizza", "BO\BOpizza.csproj", "{6066EAAA-6025-49BC-A1F3-FC6447C42CD9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BO", "BO\BO.csproj", "{6066EAAA-6025-49BC-A1F3-FC6447C42CD9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Les pizzas", "Les pizzas\Les pizzas.csproj", "{17FB7D52-C44A-4702-96CF-0D2922B51FBC}"
 EndProject
@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Les_Pizzas2", "Les_Pizzas2\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Le_Dojo", "Le_Dojo\Le_Dojo.csproj", "{9B68F42E-5DC9-4922-A39A-C69386D9D1EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BO", "BO6\BO.csproj", "{0BBA0441-0AB7-4112-946B-521C9CEC7367}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOsamourai", "BO6\BOsamourai.csproj", "{0BBA0441-0AB7-4112-946B-521C9CEC7367}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
